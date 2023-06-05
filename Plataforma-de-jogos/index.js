@@ -22,3 +22,7 @@ app.get('/quiz', (req, res) => {
 app.get('/tabuada', (req, res) => {
     res.sendFile(__dirname + '/views/tabuada.html')
 })
+
+app.get('/operacao', (req, res) => {
+    res.sendFile(__dirname + '/views/operacao.html')
+})
