@@ -2,8 +2,8 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <script src="../scripts/operacao.js" defer></script>
     <link href="../css/main.css" rel="stylesheet">
+    <script src='../scripts/hanoi.js' type="module" defer></script>
     <title>Jogos LEM</title>
 </head>
 <body>
@@ -20,23 +20,14 @@
 
     </header>
 
-    <main id="operacao">
+    <main id="hanoi">
 
-        <h2>Descubra a Operação</h2>
+        <h2>Torre de Hanoi</h2>
+        <p>Mova a torre de um pilar para outro, sem mover um retangulo maior para acima de um menor</p>
 
-        <div id="jogoBox">
-
-            <div id="operacoesDiv">                
-
-            </div>
-            <div id="confirmar">
-
-                <input type="button" id="confirmar" value="Confirmar">
-
-            </div>            
-
-        </div>
-
+        <div>Tempo: <div id="timer">00:00</div></div>
+        
+        <canvas id='gameCanvas'></canvas>
     </main>
 
     <footer>

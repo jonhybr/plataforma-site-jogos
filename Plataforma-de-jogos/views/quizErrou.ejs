@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <script src="../scripts/operacao.js" defer></script>
+    <link href="../css/quiz.css" rel="stylesheet">
     <link href="../css/main.css" rel="stylesheet">
     <title>Jogos LEM</title>
 </head>
@@ -17,24 +17,21 @@
             <input type="button" value="Crie seus jogos">
             <img src="../imagens/perfil.png">
         </div>
-
     </header>
 
-    <main id="operacao">
+    <main>
 
-        <h2>Descubra a Operação</h2>
+        <h2>Quiz Matemático</h2>
+        <p>Tente acertar o máximo de perguntas dentro do tempo limite!!</p>
 
-        <div id="jogoBox">
+        <div id="gameBox">
 
-            <div id="operacoesDiv">                
-
+            <div id="errou">
+                <h1>ERROU!</h1>
+                <h4>Você fez: <%= pontos %> Pontos</h4><h4>Você jogou por: <%= tempo %> </h4>
+                <a href="/quiz"><input type="button" value="TENTAR NOVAMENTE"></a>
             </div>
-            <div id="confirmar">
-
-                <input type="button" id="confirmar" value="Confirmar">
-
-            </div>            
-
+            
         </div>
 
     </main>

@@ -2,8 +2,8 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link href="../css/tabuada.css" rel="stylesheet">
     <link href="../css/main.css" rel="stylesheet">
+    <script src="../scripts/tabuada.js" type="module" defer></script>
     <title>Jogos LEM</title>
 </head>
 <body>
@@ -20,25 +20,32 @@
 
     </header>
 
-    <main>
+    <main id="tabuada">
 
         <h2>Tabuada Rápida</h2>
         <p>Tente acertar o máximo de resultados o mais rápido que conseguir!!</p>
+        <div id="topo">
+            <div><h4>Pontos:</h4><h4 id="pontos">0</h4></div>
+            <div><h4>Erros:</h4><h4 id="erros">0</h4></div>
+            <div><h4>Tempo:</h4><h4 id="timer">00:00</h4></div>
+        </div>
+        <div id="gameBox">
+            
+            <div id="perguntaDiv">
 
-        <div>
-
-            <div id="pergunta">
-
-                3 x 3
+                <div id="pergunta">
+                </div>
 
             </div>
+
             <div id="opcoes">
 
-                <input type="button" value="9">
-                <input type="button" value="12">
-                <input type="button" value="6">
-                <input type="button" value="14">
-                <input type="number" placeholder="Digite o valor da resposta caso prefirir">
+                <input type="button" value="9" class="botao">
+                <input type="button" value="12" class="botao">
+                <input type="button" value="6" class="botao">
+                <input type="button" value="14" class="botao">
+                <input type="number" placeholder="Digite o valor da resposta caso prefirir" id="respostaInput">
+
             </div>
 
         </div>
