@@ -43,3 +43,7 @@ app.get('/login', (req, res) => {
 app.get('/cadastro', (req, res) => {
     res.sendFile(__dirname + "/views/cadastro.html")
 })
+
+app.get('/snake', (req, res) => {
+    res.sendFile(__dirname + "/views/snake.html")
+})

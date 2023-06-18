@@ -17,28 +17,28 @@
         </div>
     </header>
     <main>
-        <form id="cadastro" method="post" action="/cadastroAction">
-                <div id="topo">
-                    <h3>Cadastrar</h3>
-                </div>
-                <div id="dados">
-                    <label for="nome">Nome</label>
-                    <input type="text" name="nome">
+        <form class="conta cadastro" method="post" action="/cadastroAction">
+            <div id="topo">
+                <h3>Cadastrar</h3>
+            </div>
+            <div id="dados">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome">
 
-                    <label for="email">Email</label>
-                    <input type="text" name="email">
+                <label for="email">Email</label>
+                <input type="email" name="email">
 
-                    <label for="senha">Senha</label>
-                    <input type="password" name="senha">
+                <label for="senha">Senha</label>
+                <input type="password" name="senha">
 
-                    <label for="confirmar_senha">Confirmar Senha</label>
-                    <input type="password" name="confirmar_senha">
+                <label for="confirmar_senha">Confirmar Senha</label>
+                <input type="password" name="confirmar_senha">
 
-                    <input type="submit" value="Cadastrar">
-                </div>
-                <div id="logar">
-                    <a href="/login">Já possuí uma conta? <div class="bold">Logar</div></a>
-                </div>
+                <input type="submit" value="Cadastrar">
+            </div>
+            <div id="base">
+                <a href="/login">Já possuí uma conta? <div class="bold">Logar</div></a>
+            </div>
         </form>
 
     </main>
