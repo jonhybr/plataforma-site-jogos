@@ -35,17 +35,17 @@ header {
     & div {
         display: flex;
         align-items: center;
-        > img {
+        & img {
             border: 2px solid white;
             background-color: aliceblue;
             border-radius: 50%;
             width: 70px;
             height: 70px;
             margin-right: 20px;
-        }
-        > img:hover {
-            cursor: pointer;
-        }
+            &:hover {
+                cursor: pointer;
+            }
+        }        
     }
 
     & input {
@@ -64,6 +64,17 @@ header {
 
 main {
     height: calc(100vh - var(--header-height) - var(--footer-height));
+    
+    > p {
+        color: red;
+        font-weight: bolder;
+        margin: 10px;
+    }
+    > h2 {
+        background-color: aquamarine;
+        width: 50%;
+        text-align: center;
+    }
 }
 
 #home {
@@ -157,6 +168,7 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    margin: 40px;
     > div {
         text-align: center;
         display: flex;
@@ -178,9 +190,6 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    > h2 {
-        margin-bottom: 20px;
-    }
     > #jogoBox {
         width: 50%;
         border: 3px solid #131313;
@@ -242,19 +251,9 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    > p {
-        color: red;
-        font-weight: bolder;
-        margin: 10px;
-    }
-    > h2 {
-        background-color: aquamarine;
-        width: 50%;
-        text-align: center;
-    }
     > #topo {
         background-color: rgb(118, 216, 255);
-        height: 4%;
+        height: 5%;
         width: 50%;
         display: flex;
         justify-content: space-between;
@@ -381,14 +380,8 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 6px;
-    > p {
-        color: red;
-        font-weight: bolder;
-    }
     > h2 {
-        background-color: aquamarine;
         width: 25%;
-        text-align: center;
     }
     #topo {
         height: 20px;

@@ -35,3 +35,7 @@ app.get('/errou', (req, res) => {
 app.get('/hanoi', (req, res) => {
     res.sendFile(__dirname + '/views/hanoi.html')
 })
+
+app.get('/cadastro', (req, res) => {
+    res.sendFile(__dirname + "/views/cadastro.html")
+})
