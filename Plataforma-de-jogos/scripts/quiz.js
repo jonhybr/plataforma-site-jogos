@@ -1,6 +1,5 @@
 const pergunta = document.getElementById('pergunta')
 const botoes = document.querySelectorAll('.botao')
-const pontos = document.getElementById('pontos')
 const timer = document.getElementById('timer')
 
 import perguntas from './quizes.json' assert{type: 'json'}
@@ -25,18 +24,21 @@ function changeQuiz(quiz){
     for (let x of botoes){
         x.onclick = () => {
             if (x.value == perguntaAtual['respostaCerta']){                
-                feitas.push(quiz)
-                pontos.textContent = feitas.length;
-                startQuiz()
+                acertos.push(quiz)                
+            } 
+            feitas.push(quiz)
+            if (feitas.length == Object.keys(perguntas).length){
+                window.location.href = '/endQuiz?total=' + feitas.length + '&acertos=' + acertos.length + '&tempo=' + timer.textContent;
                 return
-            } else {
-                window.location.href = '/errou?pontos=' + feitas.length + '&tempo=' + timer.textContent;
             }
+            startQuiz()
+            return
         }
     }
 }
 
-var feitas = []
+const feitas = []
+const acertos = []
 
 function startQuiz(){
     let quiz = getRandomQuiz()

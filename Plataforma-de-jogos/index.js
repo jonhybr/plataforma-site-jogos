@@ -28,8 +28,8 @@ app.get('/operacao', (req, res) => {
     res.sendFile(__dirname + '/views/operacao.html')
 })
 
-app.get('/errou', (req, res) => {
-    res.render('quizErrou.ejs', req.query)
+app.get('/endQuiz', (req, res) => {
+    res.render('endQuiz.ejs', req.query)
 })
 
 app.get('/hanoi', (req, res) => {
@@ -46,4 +46,16 @@ app.get('/cadastro', (req, res) => {
 
 app.get('/snake', (req, res) => {
     res.sendFile(__dirname + "/views/snake.html")
+})
+
+app.get('/brick', (req, res) => {
+    res.sendFile(__dirname + "/views/brick.html")
+})
+
+app.get('/genius', (req, res) => {
+    res.sendFile(__dirname + "/views/genius.html")
+})
+
+app.get('/memoria', (req, res) => {
+    res.sendFile(__dirname + "/views/memoria.html")
 })

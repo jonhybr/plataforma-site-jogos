@@ -24,13 +24,11 @@
         <p>Tente acertar o máximo de perguntas dentro do tempo limite!!</p>
 
         <div id="gameBox">
-
-            <div id="errou">
-                <h1>ERROU!</h1>
-                <h4>Você fez: <%= pontos %> Pontos</h4><h4>Você jogou por: <%= tempo %> </h4>
-                <a href="/quiz"><input type="button" value="TENTAR NOVAMENTE"></a>
+            <div id="final">
+                <h2>Você respondeu todas as perguntas!!!</h2>
+                <h4>Você acertou <%= acertos %> de <%= total %> perguntas!</h4><h4>Tempo final: <%= tempo %> </h4>
+                <a href="/quiz"><input type="button" value="Jogar novamente"></a>
             </div>
-            
         </div>
 
     </main>

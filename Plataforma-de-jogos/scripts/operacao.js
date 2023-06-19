@@ -34,7 +34,7 @@ const operacoes = {
 
 }
 
-let opAtual = 3
+let opAtual = 2
 
 
 function changeOp(){
