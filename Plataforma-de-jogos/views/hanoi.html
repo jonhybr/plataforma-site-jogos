@@ -22,12 +22,21 @@
 
     <main id="hanoi">
 
-        <h2>Torre de Hanoi</h2>
-        <p>Mova a torre de um pilar para outro, sem mover um retangulo maior para acima de um menor</p>
-
-        <div>Tempo: <div id="timer">00:00</div></div>
+        <h2>Torre de Hanói</h2>
+        <p>Mova a torre de um pilar para outro, sem deixar um disco maior em cima de um menor</p>
         
-        <canvas id='gameCanvas'></canvas>
+        <div id="topo">
+            <div>Passos: <div id="passos">0</div></div>
+            <div>Tempo: <div id="timer">00:00</div></div>
+        </div>
+        <div id="topo">
+            <div>
+                <p id="instrucao">Clique no disco superior e depois no pilar onde quiser colocá-lo.</p>
+                <canvas id='gameCanvas'></canvas>
+            </div>
+        
+        </div>
+        
     </main>
 
     <footer>

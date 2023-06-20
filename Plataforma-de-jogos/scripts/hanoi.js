@@ -1,4 +1,5 @@
 const timer = document.getElementById('timer');
+const passos = document.getElementById('passos')
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -44,19 +45,21 @@ addEventListener('click', (evt) => {
     for (let p of pilars){	
 		if (mouseX > p.pos[0] && mouseX < p.pos[0] + p.width && mouseY > p.pos[1] && mouseY < p.pos[1] + p.height){
 			for (let x of circles){
-				if (x.selected){
-					if (p.circles.length > 0){					
+				if (x.selected){									
+					if (p.circles.length > 0){						
 						if (x.width < p.circles[p.circles.length - 1].width){
 							x.pos = [p.pos[0] + (p.width / 2) - (x.width / 2), 0]
 							x.selected = false		    
 							remove = [p, x]
-							p.circles.push(x)
+							p.circles.push(x)	
+							passos.innerText++
 						}
 					} else {
 						x.pos = [p.pos[0] + (p.width / 2) - (x.width / 2), 0]
 						x.selected = false		    
 						remove = [p, x]
 						p.circles.push(x)
+						passos.innerText++
 					}
 					
 				}
@@ -95,17 +98,25 @@ function draw(){
 			alert('GANHOU')
 			ganhou = true;
 		}
+		ctx.beginPath()
 		ctx.fillStyle = 'orange';
-        ctx.fillRect(x.pos[0], x.pos[1], x.width, x.height)
+        ctx.fillRect(x.pos[0], x.pos[1], x.width, x.height, [10])		
 		let altura = canvas.height - circles_height;
 	for (let y of x.circles){
 	    y.pos[1] = altura
 	    if (y.selected){
+			ctx.beginPath()
 			ctx.fillStyle = 'black'
-			ctx.fillRect(y.pos[0] - 2, y.pos[1] - 2, y.width + 4, y.height + 4)
+			ctx.lineWidth = 5
+			ctx.roundRect(y.pos[0], y.pos[1], y.width, y.height, [10])
+			ctx.stroke()
 		}
+		ctx.beginPath()
 		ctx.fillStyle = y.color;
-		ctx.fillRect(y.pos[0], y.pos[1], y.width, y.height)
+		ctx.lineWidth = 1
+		ctx.roundRect(y.pos[0], y.pos[1], y.width, y.height, [10])
+		ctx.stroke()
+		ctx.fill()
 		altura -= y.height
 		}
     }
