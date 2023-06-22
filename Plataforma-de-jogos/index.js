@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
 
+app.set('view engine', 'ejs')
+
 app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.urlencoded({extended: true}))
@@ -13,49 +15,53 @@ app.listen(3000, () => {
 
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/views/home.html');
+    res.render('home');
 })
 
 app.get('/quiz', (req, res) => {
-    res.sendFile(__dirname + '/views/quiz.html')
+    res.render('quiz')
 })
 
 app.get('/tabuada', (req, res) => {
-    res.sendFile(__dirname + '/views/tabuada.html')
+    res.render('tabuada')
 })
 
 app.get('/operacao', (req, res) => {
-    res.sendFile(__dirname + '/views/operacao.html')
+    res.render('operacao')
 })
 
 app.get('/endQuiz', (req, res) => {
-    res.render('endQuiz.ejs', req.query)
+    res.render('endQuiz', req.query)
 })
 
 app.get('/hanoi', (req, res) => {
-    res.sendFile(__dirname + '/views/hanoi.html')
+    res.render('hanoi')
 })
 
 app.get('/login', (req, res) => {
-    res.sendFile(__dirname + "/views/login.html")
+    res.render('login')
 })
 
 app.get('/cadastro', (req, res) => {
-    res.sendFile(__dirname + "/views/cadastro.html")
+    res.render('cadastro')
 })
 
 app.get('/snake', (req, res) => {
-    res.sendFile(__dirname + "/views/snake.html")
+    res.render('snake')
 })
 
 app.get('/brick', (req, res) => {
-    res.sendFile(__dirname + "/views/brick.html")
+    res.render('brick')
 })
 
 app.get('/genius', (req, res) => {
-    res.sendFile(__dirname + "/views/genius.html")
+    res.render('genius')
 })
 
 app.get('/memoria', (req, res) => {
-    res.sendFile(__dirname + "/views/memoria.html")
+    res.render('memoria')
+})
+
+app.get('/2048', (req, res) => {
+    res.render('2048')
 })

@@ -7,16 +7,7 @@
 </head>
 <body>
     
-    <header>
-        <figure>
-            <a href="/"><img src="../imagens/LEM 2.png"></a>
-            <h2>JOGOS DO LEM</h2>
-        </figure>
-        <div>
-            <input type="button" value="Crie seus jogos">
-            <a href="/login"><img src="../imagens/perfil.png"></a>
-        </div>
-    </header>
+    <%- include('header.html') %>
 
     <main id="home">
         <div>
@@ -148,11 +139,11 @@
             </div>
             <div class="jogo">
                 <figure>
-                    <a href="/set"><img></a>
+                    <a href="/2048"><img></a>
                 </figure>                
                 <div>
-                    <a href="/set"><h3>2048</h3></a>
-                    <p>Simbolos e cores diferentes, memorize. Ideia professor Felipe</p>
+                    <a href="/2048"><h3>2048</h3></a>
+                    <p>Tente fazer um bloco com o valor de 2048</p>
                     <h5>Feito por: João</h5>
                 </div>
             </div>
@@ -200,10 +191,7 @@
     </div>
     </main>
 
-    <footer>
-
-
-    </footer>
+    <%- include('footer.html') %>
 
 </body>
 </html>

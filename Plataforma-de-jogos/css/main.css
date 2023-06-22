@@ -167,6 +167,71 @@ footer {
     bottom: 0;
 }
 
+#div2048 {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid rgb(92, 78, 64);
+    background-color: rgb(92, 78, 64);
+    border-radius: 8px;
+    .rows {
+        display: flex;
+    }
+    .bloco {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        font-weight: bolder;
+        background-color: rgb(185, 166, 149);
+        border: 5px solid rgb(92, 78, 64);
+        border-radius: 10px;
+        color: white;
+    }
+    .n2 {
+        background-color: rgb(255, 240, 219);
+        font-size: 40px;
+        color: #29231e;
+    }
+    .n4 {
+        background-color: rgb(255, 223, 181);
+        font-size: 40px;
+        color: #29231e;
+    }
+    .n8 {
+        background-color: rgb(255, 183, 89);
+        font-size: 40px;
+    }
+    .n16 {
+        background-color: rgb(255, 147, 75);
+        font-size: 40px;
+    }
+    .n32 {
+        background-color: rgb(255, 111, 75);
+        font-size: 40px;
+    }
+    .n64 {
+        background-color: rgb(255, 63, 50);
+        font-size: 40px;
+    }
+    .n128 {
+        background-color: rgb(240, 219, 99);        
+    }
+    .n256 {
+        background-color: rgb(236, 212, 71);
+    }
+    .n512 {
+        background-color: rgb(236, 209, 54);
+    }
+    .n1024 {
+        background-color: rgb(235, 204, 28);
+    }
+    .n2048 {
+        background-color: rgb(240, 204, 0);
+    }
+}
+
 #hanoi {
     display: flex;
     flex-direction: column;
