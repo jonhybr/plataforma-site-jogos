@@ -1,4 +1,8 @@
+const pontos = document.getElementById('pontos');
+const moves = document.getElementById('moves');
 const rows = document.getElementsByClassName('rows')
+
+var playing = true
 
 function getArrayRows(){
     let newArray = new Array()
@@ -13,15 +17,32 @@ function getArrayRows(){
 }
 
 function setRowsCollection(array){    
+    let total = 0
+    let blocos = 0
     let y = 0
-    for (const row of rows){        
+    for (const row of rows){
         let x = 0
         for (let bloco of row.children){
+            if (array[y][x].innerText){
+                total += parseInt(array[y][x].innerText)
+                if (array[y][x].innerText == '2048'){
+                    alert('PARABENS VOCÊ VENCEU!')
+                }
+            }
+            if (array[y][x].className != 'bloco'){
+                blocos++
+            }
             bloco = array[y][x]
             x++
         }
-        y++          
+        y++
     }
+    if (blocos == 16){
+        playing = false
+    } else {
+        playing = true
+    }
+    pontos.innerText = total
 }
 
 const controls = {
@@ -33,7 +54,11 @@ const controls = {
 
 addEventListener('keyup', (e) => {
     if (e.key in controls){
+        if (playing){
+            moves.innerText++
+        }        
         controls[e.key]()
+        addRandom()
     }
 })
 
@@ -43,70 +68,102 @@ function random(n){
 }
 
 function addRandom(){
-    const newArray = getArrayRows()
-    const newY = random(4)
-    const newX = random(4)
-    newArray[newY][newX].className = 'bloco n2'
-    newArray[newY][newX].innerText = '2'
-    setRowsCollection(newArray)
+    const newArray = getArrayRows()    
+
+    let newY = random(4)
+    let newX = random(4)
+
+    while (newArray[newY][newX].className != 'bloco'){
+        newY = random(4)
+        newX = random(4)
+        if (!playing){            
+            break
+        }
+    }
+
+    if (playing){
+        newArray[newY][newX].className = 'bloco n2'
+        newArray[newY][newX].innerText = '2'
+        setRowsCollection(newArray)
+    }
+}
+
+
+function checkCollision(array, reverse){
+    const newArray = new Array()
+    let c = 0
+    let total = 0
+    array.forEach((bloco, index) => {
+        if (c == 0){
+            if (array[index+1] && bloco[0] == array[index+1][0]){
+                newArray.push(['bloco n' + (parseInt(bloco[1]) + parseInt(array[index+1][1])), parseInt(bloco[1]) + parseInt(array[index+1][1])])
+                c = -2
+            } else {
+                newArray.push(bloco)
+            }
+        }
+        if (c < 0){
+            c++
+        }
+    })
+    return newArray.reverse()
 }
 
 function moveRight(){
     const newArray = getArrayRows()
     newArray.forEach((y, indexY) => {
+        let moved = []
         y.forEach((x, indexX) => {
             if (x.className != 'bloco'){
-                if (y[indexX + 1]){
-                    if (y[indexX + 1].className == 'bloco'){
-                        y[indexX + 1].className = x.className
-                        y[indexX + 1].innerText = x.innerText
-                        x.className = 'bloco'
-                        x.innerText = ''
-                    }
-                }                
-            }            
+                moved.push([x.className, x.innerText])
+                x.innerText = ''
+                x.className = 'bloco'
+            }
         })
-    })
+        moved = checkCollision(moved)
+        moved.forEach((item, index) => {
+            y[y.length - (index + 1)].className = item[0]
+            y[y.length - (index + 1)].innerText = item[1]
+        })
+    })    
     setRowsCollection((newArray))
 }
 
 function moveLeft(){
     const newArray = getArrayRows()
-    newArray.map((arr) => {arr.reverse()})
     newArray.forEach((y, indexY) => {
-        y.forEach((x, indexX) => {            
-            if (x.className != 'bloco'){                 
-                if (y[indexX + 1]){
-                    if (y[indexX + 1].className == 'bloco'){
-                        y[indexX + 1].className = x.className
-                        y[indexX + 1].innerText = x.innerText
-                        x.className = 'bloco'
-                        x.innerText = ''
-                    
-                    }
-                }                
-            }            
+        let moved = []
+        y.forEach((x, indexX) => {
+            if (x.className != 'bloco'){
+                moved.unshift([x.className, x.innerText])
+                x.innerText = ''
+                x.className = 'bloco'
+            }
+        })
+        moved = checkCollision(moved)
+        moved.forEach((item, index) => {
+            y[index].className = item[0]
+            y[index].innerText = item[1]
         })
     })
-    
-    newArray.map((arr) => {arr.reverse()})
     setRowsCollection((newArray))
 }
 
 function moveDown(){
     const newArray = getArrayRows()
     newArray.forEach((y, indexY) => {
-        y.forEach((x, indexX) => {
-            if (x.className != 'bloco'){
-                if (newArray[indexY + 1][indexX]){
-                    if (newArray[indexY + 1][indexX].className == 'bloco'){
-                        newArray[indexY + 1][indexX].className = x.className
-                        newArray[indexY + 1][indexX].innerText = x.innerText
-                        x.className = 'bloco'
-                        x.innerText = ''                    
-                    }
-                }                
-            }            
+        let moved = []
+        y.forEach((x, indexX) => {            
+            if (newArray[indexX][indexY].className != 'bloco'){
+                moved.push([newArray[indexX][indexY].className, newArray[indexX][indexY].innerText])
+                newArray[indexX][indexY].innerText = ''
+                newArray[indexX][indexY].className = 'bloco'
+            }
+        })
+        moved = checkCollision(moved)
+        moved.forEach((item, index) => {
+            newArray[newArray.length - (index + 1)][indexY].className = item[0]
+            newArray[newArray.length - (index + 1)][indexY].innerText = item[1]
         })
     })
     setRowsCollection((newArray))
@@ -114,22 +171,21 @@ function moveDown(){
 
 function moveUp(){
     const newArray = getArrayRows()
-    newArray.reverse()
     newArray.forEach((y, indexY) => {
-        y.forEach((x, indexX) => {
-            if (x.className != 'bloco'){
-                if (newArray[indexY + 1][indexX]){
-                    if (newArray[indexY + 1][indexX].className == 'bloco'){
-                        newArray[indexY + 1][indexX].className = x.className
-                        newArray[indexY + 1][indexX].innerText = x.innerText
-                        x.className = 'bloco'
-                        x.innerText = ''                    
-                    }
-                }                
-            }            
+       let moved = []
+        y.forEach((x, indexX) => {            
+            if (newArray[indexX][indexY].className != 'bloco'){
+                moved.unshift([newArray[indexX][indexY].className, newArray[indexX][indexY].innerText])
+                newArray[indexX][indexY].innerText = ''
+                newArray[indexX][indexY].className = 'bloco'
+            }
+        })        
+        moved = checkCollision(moved)
+        moved.forEach((item, index) => {
+            newArray[index][indexY].className = item[0]
+            newArray[index][indexY].innerText = item[1]
         })
     })
-    newArray.reverse()
     setRowsCollection((newArray))
 }
 

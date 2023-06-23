@@ -13,7 +13,6 @@ app.listen(3000, () => {
     console.log('Servidor rodando na porta: 3000!')
 })
 
-
 app.get('/', (req, res) => {
     res.render('home');
 })
@@ -64,4 +63,8 @@ app.get('/memoria', (req, res) => {
 
 app.get('/2048', (req, res) => {
     res.render('2048')
+})
+
+app.get('/maiormenor', (req, res) => {
+    res.render('maiormenor')
 })
