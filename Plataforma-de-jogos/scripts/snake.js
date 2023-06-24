@@ -3,8 +3,8 @@ const ctx = canvas.getContext("2d");
 
 canvas.style.backgroundColor = "#1f1f1f"
 
-canvas.width = 704;
-canvas.height = 416;
+canvas.width = 480;
+canvas.height = 390;
 
 class InputHandler {
     constructor() {
@@ -165,8 +165,8 @@ class Apple {
         let newPosY = Math.floor(Math.random() * maxSizeY)
 
         this.game.snake.body.body.forEach((obj) => {
-            if (obj.x == newPosX * 32 && obj.y == newPosY * 32) {
-                while (obj.x == newPosX * 32 && obj.y == newPosY * 32) {
+            if (obj.x == newPosX * this.game.tileSize && obj.y == newPosY * this.game.tileSize) {
+                while (obj.x == newPosX * this.game.tileSize && obj.y == newPosY * this.game.tileSize) {
                     newPosX = Math.floor(Math.random() * maxSizeX)
                     newPosY = Math.floor(Math.random() * maxSizeY)
                 }
@@ -188,7 +188,7 @@ class Game {
     constructor() {
         this.width = canvas.width;
         this.height = canvas.height;
-        this.tileSize = 32;
+        this.tileSize = 30;
         this.snake = new Snake(this);
         this.apple = new Apple(this);
     }

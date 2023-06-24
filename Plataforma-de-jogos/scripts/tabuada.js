@@ -39,6 +39,20 @@ addEventListener('keydown', (evt) => {
     
 })
 
+addEventListener('click', () => {
+    for (const x of botoes){
+        if (x.matches(':hover')){
+            if (x.value == perguntaAtual[1]){
+                pontos.innerText++
+                generateGame()
+            } else {
+                erros.innerText++
+                pontos.innerText = 0
+            }
+        }
+    }
+})
+
 let perguntaAtual = ''
 
 // CONFIGURA NA TELA A PERGUNTA E AS RESPOSTAS
@@ -59,18 +73,7 @@ function generateGame(){
         }
     }
     
-    for (let x of botoes){
-        x.onclick = () => {
-            if (x.value == perguntaAtual[1]){
-                pontos.innerText++
-                generateGame()
-		return
-            } else {
-                pontos.innerText = 0
-                erros.innerText++
-            }
-        }
-    }
+    
 }
 
 function shuffle(array) {

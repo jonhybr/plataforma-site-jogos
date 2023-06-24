@@ -68,3 +68,7 @@ app.get('/2048', (req, res) => {
 app.get('/maiormenor', (req, res) => {
     res.render('maiormenor')
 })
+
+app.get('/setgame', (req, res) => {
+    res.render('setgame')
+})
