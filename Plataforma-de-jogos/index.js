@@ -72,3 +72,6 @@ app.get('/maiormenor', (req, res) => {
 app.get('/setgame', (req, res) => {
     res.render('setgame')
 })
+app.get('/brickBreaker', (req, res) => {
+    res.render('brickBreaker')
+})
