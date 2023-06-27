@@ -47,7 +47,7 @@ class Ball {
         this.width = 20;
         this.height = 20;
         this.x = (this.game.width / 2) - (this.width / 2) + (Math.floor(Math.random() * 100) + Math.floor(Math.random() * -100));
-        this.y = this.game.height - this.game.player.height - 50;
+        this.y = this.game.height - this.game.player.height - 50 + (Math.floor(Math.random() * 10) + Math.floor(Math.random() * -10));
         this.speed = {x: 0, y: 0};
     }
     draw(ctx){
