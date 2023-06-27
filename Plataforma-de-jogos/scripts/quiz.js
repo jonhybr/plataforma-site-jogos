@@ -27,7 +27,7 @@ function changeQuiz(quiz){
                 acertos.push(quiz)                
             } 
             feitas.push(quiz)
-            if (feitas.length == Object.keys(perguntas).length){
+            if (feitas.length == 20){
                 window.location.href = '/endQuiz?total=' + feitas.length + '&acertos=' + acertos.length + '&tempo=' + timer.textContent;
                 return
             }

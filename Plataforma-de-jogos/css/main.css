@@ -308,46 +308,14 @@ footer {
             border-radius: 10px;
             color: white;
         }
-        .n2 {
+        .number {
             background-color: rgb(255, 240, 219);
             font-size: 40px;
             color: #29231e;
         }
-        .n4 {
-            background-color: rgb(255, 223, 181);
-            font-size: 40px;
-            color: #29231e;
-        }
-        .n8 {
-            background-color: rgb(255, 183, 89);
-            font-size: 40px;
-        }
-        .n16 {
-            background-color: rgb(255, 147, 75);
-            font-size: 40px;
-        }
-        .n32 {
-            background-color: rgb(255, 111, 75);
-            font-size: 40px;
-        }
-        .n64 {
-            background-color: rgb(255, 63, 50);
-            font-size: 40px;
-        }
-        .n128 {
-            background-color: rgb(240, 219, 99);        
-        }
-        .n256 {
-            background-color: rgb(236, 212, 71);
-        }
-        .n512 {
-            background-color: rgb(236, 209, 54);
-        }
-        .n1024 {
-            background-color: rgb(235, 204, 28);
-        }
-        .n2048 {
-            background-color: rgb(240, 204, 0);
+           
+        .small {
+            font-size: 30px;
         }
     }    
 }
@@ -629,9 +597,10 @@ footer {
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
+                height: 100%;
                 > img {
                     margin: 5px;
-                    width: 60%;
+                    height: 100%;
                 }
             }
             
@@ -646,8 +615,7 @@ footer {
             border: 3px solid white;
             background-color: rgb(0, 70, 0);
             gap: 50px;
-            & a {
-                width: 100%;                
+            & a {               
                 text-align: center;
             }        
             & input {

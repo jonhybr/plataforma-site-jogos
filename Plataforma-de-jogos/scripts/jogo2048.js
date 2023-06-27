@@ -82,25 +82,33 @@ function addRandom(){
     }
 
     if (playing){
-        newArray[newY][newX].className = 'bloco n2'
+        newArray[newY][newX].className = 'bloco n2 number'
         newArray[newY][newX].innerText = '2'
         setRowsCollection(newArray)
     }
 }
-
 
 function checkCollision(array, reverse){
     const newArray = new Array()
     let c = 0
     let total = 0
     array.forEach((bloco, index) => {
-        if (c == 0){
-            if (array[index+1] && bloco[0] == array[index+1][0]){
-                newArray.push(['bloco n' + (parseInt(bloco[1]) + parseInt(array[index+1][1])), parseInt(bloco[1]) + parseInt(array[index+1][1])])
+        if (c == 0){            
+            if (array[index+1] && bloco[0].split(' ')[1] == array[index+1][0].split(' ')[1]){                
+                let ran = Math.floor(Math.random() * 2)
+                let sum = parseInt(bloco[0].split(' ')[1].replace('n', '')) + parseInt(array[index+1][0].split(' ')[1].replace('n', ''))
+                if (ran == 0){
+                    newArray.push(['bloco n' + sum + " number", sum])
+                } else {
+                    newArray.push(['bloco n' + sum + " number small",
+                    "2^" + Math.log(sum) / Math.log(2)])
+                }
+                
                 c = -2
             } else {
                 newArray.push(bloco)
-            }
+            }                
+            
         }
         if (c < 0){
             c++

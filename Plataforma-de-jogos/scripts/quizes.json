@@ -200,15 +200,15 @@
         ],
         "respostaCerta": 10
     },
-    "21": {
+    "21": {        
+        "imagem": "../imagens/pergunta_numeros.png",
         "respostas": [
             "M",
             "O",
             "P",
-            "5"
+            "H"
         ],
-        "respostaCerta": "5",
-        "imagem": "../imagens/pergunta_numeros.png"
+        "respostaCerta": "M"
     },
     "22": {
         "pergunta": "Qual o próximo número na sequência: 2, 10, 12, 16, 17, 18, 19",
@@ -219,5 +219,56 @@
             32
         ],
         "respostaCerta": 200
-    }    
+    },
+    "23": {
+        "pergunta": "Eu tenho uma certa quantidade de livros, minha irmã tem o dobro de livros que eu tenho. Se juntos temos 60 livros. Quanto livros eu tenho?",
+        "respostas": [
+            20,
+            30,
+            40,
+            25
+        ],
+        "respostaCerta": 20
+    },
+    "24": {
+        "pergunta": "Minha tia tem 2 filhos a mais do que minha mãe. Se as duas juntas tem 8 filhos. Quantos filhos minha tia tem?",
+        "respostas": [
+            3,
+            5,
+            4,
+            6
+        ],
+        "respostaCerta": 5
+    },
+    "25": {
+        "imagem": "../imagens/pergunta_gato.jpg",
+        "respostas": [
+            13,
+            15,
+            17,
+            18
+        ],
+        "respostaCerta": 17
+    },
+    "26": {
+        "imagem": "../imagens/pergunta_aneis2.png",
+        "respostas": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "respostaCerta": 2
+    },
+    "27": {
+        "imagem": "../imagens/pergunta_piramide.png",
+        "respostas": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "respostaCerta": 3
+    }
+        
 }
