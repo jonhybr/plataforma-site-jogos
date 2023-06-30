@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link href="../css/velha.css" rel="stylesheet">
+    <script src="../scripts/velha.js" defer></script>
+    <title>Jogos do LEM</title>
+</head>
+<body>
+
+    <%- include('header.html') %>
+
+    <main>
+
+        <h2>Jogo da Velha</h2>
+        <p>Escolha "X" ou "O", o jogador que fizer uma linha com 3 destes símbolos primeiro vence</p>
+        <div id="velhaGameDiv">
+            <div class="escolha">              
+                <div class="xis">X</div>
+                <div class="circulo">O</div>
+            </div>
+            <div class="player 1">
+                <h3>Jogador 1</h3>
+                <h4>Movimentos: <div class="movimentos">0</div></h4>
+                <h4>Vitórias: <div class="vitorias">0</div></h4>
+            </div>
+            <div id="velhaDiv">
+                <div class="espaco"></div>
+                <div class="espaco"></div>
+                <div class="espaco"></div>
+                <div class="espaco"></div>
+                <div class="espaco"></div>
+                <div class="espaco"></div>
+                <div class="espaco"></div>
+                <div class="espaco"></div>
+                <div class="espaco"></div>
+            </div>
+            <div class="player 2">
+                <h3>Jogador 2</h3>
+                <h4>Movimentos: <div class="movimentos">0</div></h4>
+                <h4>Vitórias: <div class="vitorias">0</div></h4>
+            </div>
+            <div class="escolha">              
+                <div class="circulo">O</div>
+                <div class="xis">X</div>
+            </div>
+        </div>
+
+    </main>
+
+    <%- include('footer.html') %>
+    
+</body>
+</html>

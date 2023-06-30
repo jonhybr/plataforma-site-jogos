@@ -3,6 +3,7 @@ const ctx = canvas.getContext('2d');
 
 canvas.width = 600
 canvas.height = 400
+canvas.style.border = "2px dotted #1F1F1F;"
 
 class Bricks {
     constructor(game) {

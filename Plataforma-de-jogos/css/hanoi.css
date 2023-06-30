@@ -1,0 +1,32 @@
+#hanoi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 40px;
+    #topo {
+        text-align: center;
+        display: flex;
+        gap: 20px;
+        width: 70%;
+        justify-content: center;
+        #instrucao{
+            text-align: justify;
+            padding: 20px;       
+        }        
+        > div{
+            display: flex;
+            gap: 5px;            
+            background-color: #3F3F3F;
+            color: white;
+            padding: 8px;
+            border-radius: 8px;
+        }
+    }
+    #gameCanvas{
+        border: 1px solid black;
+	    background-color: lightblue;
+        flex-basis: 1280px;
+    }
+}

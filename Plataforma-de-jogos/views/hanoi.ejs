@@ -2,23 +2,13 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/hanoi.css" rel="stylesheet">
     <script src='../scripts/hanoi.js' type="module" defer></script>
     <title>Jogos LEM</title>
 </head>
 <body>
     
-    <header>
-        <figure>
-            <a href="/"><img src="../imagens/LEM 2.png"></a>
-            <h2>JOGOS DO LEM</h2>
-        </figure>
-        <div>
-            <input type="button" value="Crie seus jogos">
-            <img src="../imagens/perfil.png">
-        </div>
-
-    </header>
+    <%- include('header.html') %>
 
     <main id="hanoi">
 
@@ -39,10 +29,7 @@
         
     </main>
 
-    <footer>
-
-
-    </footer>
+    <%- include('footer.html') %>
 
 </body>
 </html>

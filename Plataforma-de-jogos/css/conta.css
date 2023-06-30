@@ -1,0 +1,74 @@
+.login {    
+    height: 60%;
+}
+
+.cadastro {    
+    height: 75%;
+}
+
+.conta {
+    width: 20%;
+    border: 1px solid #1F1F1F;
+    border-radius: 6px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    > *{
+        width: 100%;
+    }
+    #topo {
+        flex-basis: 15%;
+        text-align: center;
+    }
+    #dados {
+        flex-basis: 75%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        > input {
+            border: none;
+            border-bottom: 1px solid #1F1F1F;
+            margin-bottom: 10px;
+            margin-top: 5px;
+            color: black;
+            &:focus {
+                outline: 1px solid #1F1F1F;
+                border-radius: 4px;
+            }
+        }
+        > input[type=submit]{
+            border: 1px solid black;
+            padding: 5px;
+            margin-top: 20px;
+            border-radius: 6px;
+            background-color: #3F3F3F;
+            color: white;
+            &:hover{
+                cursor: pointer;                
+                background-color: #131313;
+            }
+        }
+    }
+    #base {
+        flex-basis: 10%;
+        font-size: small;        
+        display: flex;        
+        & a{
+            width: 100%;
+            display: flex;
+            gap: 5px;
+            text-align: center;
+            justify-content: center;
+            text-decoration: none;
+            color: black;
+            .bold {
+                font-weight: bold;
+            }
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

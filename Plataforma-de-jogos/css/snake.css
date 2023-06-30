@@ -1,0 +1,8 @@
+#snakeDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #315779;
+    border-radius: 10px;
+    padding: 1%;
+}

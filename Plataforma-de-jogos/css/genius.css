@@ -1,0 +1,75 @@
+#genius {    
+    #startGenius {
+        background-color: greenyellow;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 8px;
+        border: 1px solid #1F1F1F;
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(158, 235, 44);
+        }
+    }
+    #gameGenius{
+        aspect-ratio: 1/1;
+        position: relative;        
+        width: 25%;
+        border: 1px solid black;
+        background-color: #1F1F1F;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        border-radius: 48%;
+        overflow: hidden;
+        border: 15px solid #1F1F1F;
+        > * {
+            gap: 15px;
+        }
+        #cima {
+            width: 100%;
+            flex-basis: 50%;
+            display: flex;            
+        }
+        #baixo {
+            width: 100%;
+            flex-basis: 50%;
+            display: flex;
+        }
+        #centro {
+            display: inline-flex;
+            position: absolute;
+            z-index: 1;
+            background-color: #1F1F1F;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            border-radius: 50%;
+            height: 200px;
+            width: 200px;
+        }
+        .red {
+            width: 100%;
+            flex-basis: 50%;
+            background-color: rgb(156, 0, 0);
+        }     
+        .green {
+            flex-basis: 50%;
+            background-color: rgb(0, 139, 0);
+        }
+        .blue {
+            flex-basis: 50%;
+            background-color: rgb(0, 132, 255);
+        }
+        .yellow {
+            flex-basis: 50%;
+            background-color: rgb(139, 139, 0);
+        }
+        .rect:hover {
+            filter: brightness(250%);
+        }
+        
+    }
+}

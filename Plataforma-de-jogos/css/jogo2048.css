@@ -1,0 +1,44 @@
+#main2048{
+    #topo {
+        display: flex;
+        gap: 5px;
+        background-color: #3F3F3F;
+        color: white;
+        padding: 5px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+    }
+    #div2048 {
+        display: flex;
+        flex-direction: column;
+        border: 5px solid rgb(92, 78, 64);
+        background-color: rgb(92, 78, 64);
+        border-radius: 8px;
+        
+        .rows {
+            display: flex;
+        }
+        .bloco {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bolder;
+            background-color: rgb(185, 166, 149);
+            border: 5px solid rgb(92, 78, 64);
+            border-radius: 10px;
+            color: white;
+        }
+        .number {
+            background-color: rgb(255, 240, 219);
+            font-size: 40px;
+            color: #29231e;
+        }
+           
+        .small {
+            font-size: 30px;
+        }
+    }    
+}
