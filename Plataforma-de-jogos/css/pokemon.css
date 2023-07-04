@@ -108,13 +108,14 @@
             display: flex;            
             .opc {
                 display: grid;
-                align-items: center;
-                padding-left: 10%;
+                align-items: center;                
+                padding-left: 10%;                
                 flex-basis: 50%;
-                font-size: 3.5vmin;
+                font-size: 3.2vmin;
                 width: 50px;                
                 text-shadow: 2px 2px rgb(156, 156, 156);
                 z-index: 1;
+                user-select: none;
                 &:hover {
                     cursor: pointer;
                     &::before {

@@ -8,20 +8,23 @@ var playing = false
 
 class Game {
     constructor() {
-        this.colors = ['red', 'green', 'yellow', 'blue']
+        this.colors = ['red', 'green', 'yellow', 'blue']        
         this.pattern = []
+        this.pressed = []
+
         this.play = false
+
         this.atual = 0
         this.level = 1
+
         this.timer = 50
         this.time = 50
-        this.pressed = []
+
         this.buttonListener()
         this.addToPattern()
     }
 
     update() {
-                  
         this.drawPattern()
         if (this.timer < 0){
             buttons.forEach((btn) => {
@@ -39,8 +42,12 @@ class Game {
             if (this.atual < this.pattern.length) {
                 this.timer = -10
                 this.atual++
+                if (this.atual == this.pattern.length){
+                    this.timer = 0
+                }
             } else {
                 this.play = true
+
                 buttons.forEach((btn) => this.checkHover(btn))
 
                 if (this.pattern[this.pressed.length - 1] == this.pressed[this.pressed.length - 1]) {                    
@@ -119,8 +126,18 @@ start.onclick = () => {
     } else {
         game.restart()
     }
-    
-    
 }
 
+function checkCursor(){
+    for (const btn of buttons){
+        if (btn.matches(':hover') && game.atual == game.pattern.length){
+            document.body.style.cursor = "pointer"
+            return
+        } else {
+            document.body.style.cursor = "default"
+        }
+    }
+}
+
+setInterval(checkCursor, 100)
 
