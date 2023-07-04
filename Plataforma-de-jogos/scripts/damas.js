@@ -44,10 +44,14 @@ const pecasBrancas = document.getElementsByClassName('damaBranca');
 addEventListener('mousemove', () => {
     if (atualPlayer == 'brancas'){
         playerBrancas.style.outline = "8px solid yellow"
+        playerBrancas.style.transform = "scale(110%)"
         playerPretas.style.outline = "none"
+        playerPretas.style.transform = "scale(100%)"
     } else {
         playerPretas.style.outline = "8px solid yellow"
+        playerPretas.style.transform = "scale(110%)"
         playerBrancas.style.outline = "none"
+        playerBrancas.style.transform = "scale(100%)"
     }    
     
     document.body.style.cursor = "default"
