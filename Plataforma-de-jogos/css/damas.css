@@ -1,0 +1,96 @@
+#damasDiv{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    #playerPretas, #playerBrancas {
+        width: 10%;
+        aspect-ratio: 1/1;
+        border: 8px solid grey;
+        border-radius: 50%;        
+        position: relative;
+        &::after {
+            content: "";
+            outline: 5px solid grey;
+            width: 80%;
+            height: 80%;
+            transform: translate(12%, 12%);
+            border-radius: 50%;
+            position: absolute;
+        } 
+    }
+    #playerPretas {
+        background-color: black;
+    }
+    #playerBrancas {
+        background-color: white;               
+    }
+}
+#damas {    
+    aspect-ratio: 1/1;
+    width: 30%;
+    border: 20px solid #1f1f1f;
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 102%;
+        height: 102%;                
+        margin-left: -1%;
+        margin-top: -1%;
+        outline: 4px solid white;
+    }
+    .black, .white {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+    .black {
+        background-color: rgb(182, 63, 63);
+    }
+    .white {
+        background-color: white;
+    }
+    .damaPreta {
+        background-color: black;
+        position: relative;
+        width: 70%;
+        height: 70%;
+        border-radius: 50%;
+        outline: 3px solid grey;
+        &::after {
+            content: "";
+            position: absolute;            
+            width: 70%;
+            height: 70%;
+            outline: 3px solid grey;
+            transform: translate(21%, 21%);
+            border-radius: 50%;
+
+        }
+    }
+    .damaBranca {        
+        background-color: white;
+        width: 70%;
+        height: 70%;
+        border-radius: 50%;
+        outline: 2px solid grey;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;            
+            width: 70%;
+            height: 70%;
+            outline: 3px solid grey;
+            transform: translate(21%, 21%);
+            border-radius: 50%;
+
+        }
+    }
+}
