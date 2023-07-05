@@ -6,16 +6,7 @@
     <title>Jogos do LEM</title>
 </head>
 <body>
-    <header>
-        <figure>
-            <a href="/"><img src="../imagens/LEM 2.png"></a>
-            <h2>JOGOS DO LEM</h2>
-        </figure>
-        <div>
-            <input type="button" value="Crie seus jogos">
-            <a href="/login"><img src="../imagens/perfil.png"></a>
-        </div>
-    </header>
+    <%- include('header.html') %>
     <main>
         <form class="conta login" method="post" action="/loginAction">
             <div id="topo">
@@ -36,6 +27,6 @@
         </form>
 
     </main>
-    <footer></footer>
+    <%- include('footer.html') %>
 </body>
 </html>

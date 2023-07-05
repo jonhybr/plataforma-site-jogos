@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="../css/pokemon.css" rel="stylesheet">
-    <script src="../scripts/pokemon.js"></script>
+    <script src="../scripts/pokemon.js" defer></script>
     <title>Jogos do LEM</title>
 </head>
 <body>
@@ -36,15 +36,33 @@
                 <img src="../imagens/starmie.png" id="enemyPokemon">
                 <div id="attackText">
                     <div>
-                        <p>O que PIKACHU irá fazer?</p>
+                        <p>What will PIKACHU do?</p>
                     </div>
                 </div>
-                <div id="attackOpc">
+                <div id="options">
                     <div>
                         <div class="opc">LUTAR</div>
                         <div class="opc">BOLSA</div>
                         <div class="opc">POKÉMON</div>
                         <div class="opc">FUGIR</div>
+                    </div>
+                </div>
+                <div id="ataques">
+                    <div>
+                        <div class="atq">TACKLE</div>
+                        <div class="atq">GROWL</div>
+                        <div class="atq">LEECH SEED</div>
+                        <div class="atq">VINE WHIP</div>
+                    </div>
+                </div>
+                <div id="status">
+                    <div>
+                        <div id="ppDiv">
+                            <div id="pp">PP</div><div id="ppCounter">23/35</div>
+                        </div>                            
+                        <div id="typeDiv">
+                            <div>TYPE/</div><div id="type">NORMAL</div>
+                        </div>
                     </div>
                 </div>
             </div>
