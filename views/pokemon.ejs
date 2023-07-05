@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link href="../css/pokemon.css" rel="stylesheet">
+    <script src="../scripts/pokemon.js"></script>
+    <title>Jogos do LEM</title>
+</head>
+<body>
+        <%- include('header.html') %>
+
+        <main>
+
+            <h2>Jornada Pokémon</h2>
+            <p>Vença as batalhas usando golpes efetivos</p>
+
+            <div id="pokemonGrid">
+                <div id="inimigoDiv">                    
+                    <div id="inimigoName">STARMIE</div>
+                    <div id="inimigoLvl">Lv5</div>
+                    <div id="inimigoHealth">
+                        <div>HP</div>                        
+                        <div id="health"></div>
+                    </div>
+                </div>
+                <div id="playerDiv">                    
+                    <div id="playerName">PIKACHU</div>                    
+                    <div id="playerLvl">Lv5</div>
+                    <div id="playerHealth">
+                        <div>HP</div>
+                        <div id="health"></div>
+                    </div>                    
+                    <div id="healthNumber">20/20</div>
+                </div>
+                <img src="../imagens/pikachu.png" id="pikachu">
+                <img src="../imagens/starmie.png" id="enemyPokemon">
+                <div id="attackText">
+                    <div>
+                        <p>O que PIKACHU irá fazer?</p>
+                    </div>
+                </div>
+                <div id="attackOpc">
+                    <div>
+                        <div class="opc">LUTAR</div>
+                        <div class="opc">BOLSA</div>
+                        <div class="opc">POKÉMON</div>
+                        <div class="opc">FUGIR</div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <%- include('footer.html') %>
+</body>
+</html>

@@ -14,7 +14,7 @@ app.listen(3000, () => {
 })
 
 const pages = ['placeholder', 'brickBreaker', 'setGame', 'maiormenor', "2048", "memoria", "genius", "brick", "snake", "cadastro",
-"login", "hanoi", "endQuiz", "operacao", "tabuada", "quiz", "velha", "muleta", "damas"]
+"login", "hanoi", "operacao", "tabuada", "quiz", "velha", "muleta", "damas", "pokemon"]
 
 for (const page of pages){
     app.get("/" + page, (req, res) => {
@@ -24,4 +24,8 @@ for (const page of pages){
 
 app.get('/', (req, res) => {
     res.render('home');
+})
+
+app.get('/endQuiz', (req, res) => {
+    res.render("endQuiz", req.query)
 })

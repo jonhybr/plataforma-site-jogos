@@ -2,13 +2,26 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <link href="../css/damas.css" rel="stylesheet">
+    <script src="../scripts/damas.js" defer></script>
     <title>Jogos do LEM</title>
 </head>
 <body>
 
     <%- include('header.html') %>
 
-    <main></main>
+    <main>
+
+        <h2>Damas</h2>
+        <p>Mova suas peças na diagonal e derrote seu oponente sendo o último vivo</p>
+
+        <div id="damasDiv">
+            <div id="playerPretas"></div>
+            <div id="damas"></div>
+            <div id="playerBrancas"></div>
+        </div>
+
+    </main>
 
     <%- include('footer.html') %>
     
