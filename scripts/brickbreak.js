@@ -47,9 +47,14 @@ class Ball {
         this.game = game;
         this.width = 20;
         this.height = 20;
+        this.moving = false;
         this.x = (this.game.width / 2) - (this.width / 2) + (Math.floor(Math.random() * 100) + Math.floor(Math.random() * -100));
         this.y = this.game.height - this.game.player.height - 50 + (Math.floor(Math.random() * 10) + Math.floor(Math.random() * -10));
         this.speed = {x: 0, y: 0};
+    }
+    resetPos(){
+        this.x = (this.game.width / 2) - (this.width / 2) + (Math.floor(Math.random() * 100) + Math.floor(Math.random() * -100));
+        this.y = this.game.height - this.game.player.height - 50 + (Math.floor(Math.random() * 10) + Math.floor(Math.random() * -10));
     }
     draw(ctx){
         ctx.beginPath();
@@ -83,7 +88,13 @@ class Ball {
         }
         else if (this.y + this.height > this.game.height){
             this.speed.y = 0
-            this.speed.x = 0
+            this.speed.x = 0            
+            this.moving = false
+            this.game.player.lives -= 1
+            console.log(this.game.player.lives)
+            if (this.game.player.lives > 0){
+                this.resetPos()
+            }            
         }
         else if (this.x < 0){
             this.speed.x *= -1
@@ -112,7 +123,8 @@ class Player{
     constructor(game){
         this.game = game
         this.width = 100
-        this.height = 20        
+        this.height = 20
+        this.lives = 3
         this.x = (this.game.width / 2) - (this.width / 2);
         this.y = this.game.height - this.height - 20
         this.color = '#d8e0e7'
@@ -167,8 +179,10 @@ class Player{
         this.x += speed
     }
     startBallMove(){
-        this.game.ball.speed.y = -4
-        this.game.ball.speed.x = 4
+        if (!this.game.ball.moving && this.lives > 0){
+            this.game.ball.speed.y = -4
+            this.game.ball.speed.x = 4
+        }
     }
 }
 

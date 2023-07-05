@@ -2,7 +2,8 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <script src="../scripts/brickbreak.js" defer></script>
+    <script src="../scripts/brickbreak.js" defer></script>    
+    <link href="../css/brickbreak.css" rel="stylesheet">
     <title>Jogos do LEM</title>
 </head>
 <body>
@@ -13,6 +14,10 @@
 
         <h2>Brick Breaker</h2>
         <p>Mova a plataforma sem deixar a esfera cair (Seta para cima para começar!)</p>
+        <div id="topo">
+            <div>Pontuação <div id="pontos"></div></div>
+            <div>Vidas <div id="vidas"></div></div>
+        </div>
         <canvas id="brickBreakCanvas"></canvas>
 
     </main>

@@ -35,8 +35,7 @@ addEventListener('keydown', (evt) => {
                 erros.innerText++
             }
         }
-    }
-    
+    }    
 })
 
 addEventListener('click', () => {
