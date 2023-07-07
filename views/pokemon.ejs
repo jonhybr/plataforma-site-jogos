@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="../css/pokemon.css" rel="stylesheet">
-    <script src="../scripts/pokemon.js" defer></script>
+    <script src="../scripts/pokemon.js" defer type="module"></script>
     <title>Jogos do LEM</title>
 </head>
 <body>
@@ -32,7 +32,7 @@
                     </div>                    
                     <div id="healthNumber">20/20</div>
                 </div>
-                <img src="../imagens/pikachu.png" id="pikachu">
+                <img src="../imagens/pikachu2.png" id="playerPokemon">
                 <img src="../imagens/starmie.png" id="enemyPokemon">
                 <div id="attackText">
                     <div>
@@ -64,6 +64,31 @@
                             <div>TYPE/</div><div id="type">NORMAL</div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div id="choosePokemonGrid">
+                <div id="selected">                    
+                    <div class="pokebola"></div>
+                    <div class="nome">PIKACHU</div>
+                    <div class="level">Lv5</div>
+                    <div class="hpBar">HP</div>
+                    <div class="hpValue">25/25</div>
+                </div>
+                <div id="choose">
+                    <div class="pokemon">
+                    </div>
+                    <div class="pokemon">
+                    </div>
+                    <div class="pokemon">
+                    </div>
+                    <div class="pokemon">
+                    </div>
+                    <div class="pokemon">
+                    </div>
+                </div>
+                <div id="bottomDiv">
+                    <div id="text">Choose a POKÉMON.</div>
+                    <div id="cancel">CANCEL</div>
                 </div>
             </div>
 

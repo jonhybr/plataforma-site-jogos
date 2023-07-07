@@ -29,11 +29,12 @@
             padding-right: 5%;
         }
     }
-    #pikachu {
+    #playerPokemon {
         grid-area: pi;
-        width: 70%;
-        height: 90%;
+        width: 60%;
+        height: 80%;
         align-self: flex-end;
+        image-rendering: pixelated;
     }
     #enemyPokemon {
         grid-area: pe;
@@ -297,6 +298,256 @@
                 height: 76%;
                 align-self: center;
                 border-radius: 8px;
+            }
+        }
+    }
+}
+
+#choosePokemonGrid {
+    display: none;
+    background-image: url("../imagens/escolherPokemonFundo.png");
+    border: 1px solid black;
+    position: relative;
+    justify-content: center;    
+    flex-wrap: wrap;
+    gap: 2%;
+    width: 45%;
+    height: 80%;
+    padding: 1%;
+    font-size: 2.3vmin;
+    color: white;
+    text-shadow: 2px 2px black;
+    #selected {
+        flex-basis: 36%;
+        height: 35%;
+        margin-top: 7%;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: end;        
+        background: url("../imagens/pokemonFundo.png") no-repeat;
+        background-size: cover;
+        outline: 3px solid rgb(58, 58, 58);
+        position: relative;
+        &:hover {
+            background-color: rgb(120, 208, 232);                  
+            outline: 6px solid rgb(250, 112, 54);
+            cursor: pointer;
+            &::after {
+                outline: 5px solid rgb(83, 83, 83);
+            }
+            &::before {
+                outline: 5px solid rgb(83, 83, 83);
+            }
+        }
+        .hpValue {
+            font-size: 2.7vmin;
+        }
+        .nome {
+            font-size: 3.7vmin;
+        }
+        .level {
+            font-size: 3.4vmin;
+        }
+        .nome, .level {
+            align-self: center;
+        }
+        .hpBar {
+            font-size: 2.5vmin;
+            background-color: #1f1f1f;
+            padding-left: 1%;
+            border-radius: 4px;
+            color: rgb(245, 167, 66);
+            font-weight: bolder;
+            position: relative;
+            width: 90%;
+            &::after {
+                content: "";
+                position: absolute;
+                width: 80%;
+                height: 50%;
+                right: 1%;
+                bottom: 0;
+                top: 0;
+                margin: auto 0;
+                border-radius: 4px;
+                border: 2px solid white;
+                background-color: rgb(111, 249, 171);
+            }
+        }
+        .hpValue {
+            padding-right: 4%;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            height: 18%;
+            aspect-ratio: 2/1;
+            background-color: red;
+            border-top-left-radius: 100px;
+            border-top-right-radius: 100px;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            outline: 3px solid rgb(58, 58, 58);
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            height: 18%;
+            aspect-ratio: 2/1;
+            background-color: white;
+            border-bottom-left-radius: 100px;
+            border-bottom-right-radius: 100px;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, 50%);
+            outline: 3px solid rgb(58, 58, 58)
+        }
+    }
+    #choose {
+        flex-basis: 54%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 3%;        
+        gap: 3%;
+        .pokemon {            
+            outline: 3px solid rgb(58, 58, 58);
+            background-image: url("../imagens/pokemonFundo.png");
+            border-radius: 4px;
+            height: 17%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: end;            
+            align-items: end;            
+            padding-right: 2%;
+            &:hover {
+                cursor: pointer;
+                background-color: rgb(120, 208, 232);                  
+                outline: 6px solid rgb(250, 112, 54);
+                .pokebola {
+                    outline: 5px solid rgb(83, 83, 83);
+                    &::after {
+                        outline: 5px solid rgb(83, 83, 83);
+                    }
+                }
+            }
+            .level, .hpValue {
+                height: 50%;
+            }
+            .name, hpBar {
+                height: min-content;
+            }
+
+            .hpBar {
+                width: 50%;
+                border: 1px solid black;
+                background-color: #1f1f1f;
+                height: 30%;
+                font-weight: bolder;
+                color: rgb(245, 167, 66);
+                padding-bottom: 6%;
+                border-radius: 4px;                
+                padding-left: 1%;
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 75%;
+                    background-color: rgb(111, 249, 171);
+                    border: 2px solid white;
+                    height: 70%;
+                    right: 1%;
+                    top: 0;                    
+                    bottom: 0;
+                    margin: auto 0;
+                    border-radius: 4px;
+                }
+            }
+
+            .pokebola {
+                position: absolute;
+                left: -7%;
+                top: 5%;
+                height: 45%;
+                aspect-ratio: 2/1;
+                background-color: red;
+                border-top-right-radius: 100px;
+                border-top-left-radius: 100px;
+                outline: 3px solid black;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    background-color: white;
+                    height: 100%;
+                    outline: 3px solid black;
+                    border-bottom-left-radius: 100px;
+                    border-bottom-right-radius: 100px;
+                    aspect-ratio: 2/1;
+                    transform: translate(0, 100%);
+                }
+            }
+        }
+    }
+    #bottomDiv {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 95%;
+        height: 18%;
+        #text {
+            flex-basis: 72%;
+            height: 100%;            
+            background-color: rgb(248, 248, 248);
+            display: flex;
+            align-items: end;
+            padding-bottom: 2%;
+            padding-left: 2%;
+            color: #444444;
+            border: 6px solid #5c5c5c;
+            border-radius: 4px;
+            text-shadow: 2px 2px rgb(167, 167, 167);
+            font-size: 3.5vmin;
+            font-weight: bolder;
+        }
+        #cancel {
+            background-color: rgb(113, 88, 179);
+            position: relative;
+            padding: 2%;
+            height: 60%;
+            font-size: 3vmin;
+            display: flex;
+            align-items: center;
+            border: 5px solid #444444;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;            
+            &::after {
+                content: "";
+                position: absolute;
+                height: 70%;
+                aspect-ratio: 2/1;
+                background-color: red;
+                top: -20%;
+                border-top-right-radius: 100px;
+                border-top-left-radius: 100px;
+                outline: 5px solid #444444;
+                left: -36%;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                height: 70%;
+                aspect-ratio: 2/1;
+                background-color: white;
+                bottom: -30%;
+                border-bottom-right-radius: 100px;
+                border-bottom-left-radius: 100px;
+                outline: 5px solid #444444;
+                left: -36%;
             }
         }
     }
