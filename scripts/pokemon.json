@@ -1,7 +1,16 @@
 {
-    "TACKLE": {
+    "tackle": {
+        "name": "TACKLE",
         "pp": 25,
+        "maxPp": 25,
         "damage": 5,
         "type": "NORMAL"
+    },
+    "ember": {
+        "name": "EMBER",
+        "pp": 30,
+        "maxPp": 30,
+        "damage": 10,
+        "type": "FIRE"
     }
 }

@@ -51,7 +51,7 @@
     },
     "6": {
         "pergunta": "",
-        "imagem": "../imagens/pergunta_estacionamento.png",
+        "imagem": "../imagens/quiz/pergunta_estacionamento.png",
         "respostas": [
             "83",
             "78",
@@ -201,7 +201,7 @@
         "respostaCerta": 10
     },
     "21": {        
-        "imagem": "../imagens/pergunta_numeros.png",
+        "imagem": "../imagens/quiz/pergunta_numeros.png",
         "respostas": [
             "M",
             "O",
@@ -241,7 +241,7 @@
         "respostaCerta": 5
     },
     "25": {
-        "imagem": "../imagens/pergunta_gato.jpg",
+        "imagem": "../imagens/quiz/pergunta_gato.jpg",
         "respostas": [
             13,
             15,
@@ -251,7 +251,7 @@
         "respostaCerta": 17
     },
     "26": {
-        "imagem": "../imagens/pergunta_aneis2.png",
+        "imagem": "../imagens/quiz/pergunta_aneis2.png",
         "respostas": [
             1,
             2,
@@ -261,7 +261,7 @@
         "respostaCerta": 2
     },
     "27": {
-        "imagem": "../imagens/pergunta_piramide.png",
+        "imagem": "../imagens/quiz/pergunta_piramide.png",
         "respostas": [
             1,
             2,
