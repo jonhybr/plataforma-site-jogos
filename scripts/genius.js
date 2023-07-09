@@ -134,7 +134,7 @@ function checkCursor(){
             document.body.style.cursor = "pointer"
             return
         } else {
-            document.body.style.cursor = "default"
+            document.body.style.cursor = "inherit"
         }
     }
 }

@@ -1,4 +1,6 @@
 #main2048{
+    height: calc(100% - var(--header-height) - var(--footer-height));
+    padding: 1%;
     #topo {
         display: flex;
         gap: 5px;
@@ -14,6 +16,7 @@
         border: 5px solid rgb(92, 78, 64);
         background-color: rgb(92, 78, 64);
         border-radius: 8px;
+        
         
         .rows {
             display: flex;

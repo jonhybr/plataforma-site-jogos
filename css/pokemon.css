@@ -329,7 +329,7 @@
         }
         > p {
             z-index: 2;
-            flex-basis: 45%;
+            flex-basis: 50%;
             font-size: 4vmin;
             line-height: 165%;
             padding-left: 3%;

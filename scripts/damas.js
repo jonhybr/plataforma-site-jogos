@@ -9,6 +9,8 @@ const playerBrancas = document.getElementById('playerBrancas')
 const gridArray = new Array()
 
 let atualPlayer = 'brancas'
+playerBrancas.style.outline = "8px solid yellow"
+playerBrancas.style.transform = "scale(110%)"
 
 let c = 0
 for (let y = 0; y < gridColumns; y++) {
@@ -41,20 +43,8 @@ for (let y = 0; y < gridColumns; y++) {
 const pecasPretas = document.getElementsByClassName('damaPreta');
 const pecasBrancas = document.getElementsByClassName('damaBranca');
 
-addEventListener('mousemove', () => {
-    if (atualPlayer == 'brancas'){
-        playerBrancas.style.outline = "8px solid yellow"
-        playerBrancas.style.transform = "scale(110%)"
-        playerPretas.style.outline = "none"
-        playerPretas.style.transform = "scale(100%)"
-    } else {
-        playerPretas.style.outline = "8px solid yellow"
-        playerPretas.style.transform = "scale(110%)"
-        playerBrancas.style.outline = "none"
-        playerBrancas.style.transform = "scale(100%)"
-    }    
-    
-    document.body.style.cursor = "default"
+addEventListener('mousemove', () => {    
+    document.body.style.cursor = "inherit"
     for (const p of pecasPretas) {
         if (p.matches(':hover')) {
             document.body.style.cursor = "pointer"
@@ -175,4 +165,15 @@ addEventListener('mouseup', () => {
             }
         })
     })
+    if (atualPlayer == 'brancas'){
+        playerBrancas.style.outline = "8px solid yellow"
+        playerBrancas.style.transform = "scale(110%)"
+        playerPretas.style.outline = "none"
+        playerPretas.style.transform = "scale(100%)"
+    } else {
+        playerPretas.style.outline = "8px solid yellow"
+        playerPretas.style.transform = "scale(110%)"
+        playerBrancas.style.outline = "none"
+        playerBrancas.style.transform = "scale(100%)"
+    }
 })

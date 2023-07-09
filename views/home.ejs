@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="../css/main.css" rel="stylesheet">
+    <script src="../scripts/pesquisarJogo.js" defer></script>
     <title>Jogos LEM</title>
 </head>
 <body>
@@ -10,13 +11,15 @@
     <%- include('header.html') %>
 
     <main id="home">
-        <div>
-        <div>
+        <div id="bemVindoDiv">
             <h2>Bem-vindo(a) aos Jogos do LEM</h2>
-            <p>Aqui você irá encontrar diversos jogos para aprender e praticar seus conhecimentos matemáticos e lógicos</p>
+            <p>Aqui você irá encontrar diversos jogos para aprender e praticar suas habilidades matemáticas e lógicas</p>
+        </div>
+        <div id="pesquisarJogoDiv">
+            <label for="pesquisaInput">Procurar jogo pelo nome</label>
+            <input type="text" id="pesquisaInput">
         </div>
         <div id="jogos">
-
             <div class="jogo">
                 <figure>
                     <a href="/quiz"><img src="../imagens/capas/quiz.PNG"></a>
@@ -222,7 +225,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </main>
 
     <%- include('footer.html') %>
