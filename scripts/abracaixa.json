@@ -1,0 +1,12 @@
+{
+    "1": {
+        "pergunta": "teste1",
+        "alternativas": ["alternativa1", "alternativa2"],
+        "resposta": "alternativa1"
+    },
+    "2": {
+        "pergunta": "test2",
+        "alternativas": [],
+        "resposta": ""
+    }
+}

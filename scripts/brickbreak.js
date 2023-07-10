@@ -2,7 +2,7 @@ const canvas = document.getElementById('brickBreakCanvas');
 const ctx = canvas.getContext('2d');
 
 canvas.width = 600
-canvas.height = 400
+canvas.height = 430
 canvas.style.border = "2px dotted #1F1F1F;"
 
 class Bricks {
@@ -12,12 +12,10 @@ class Bricks {
         this.height = 20
         this.bricks = []
         this.colors = ['#50fa25', '#298dff', '#7931ff', '#f831ff', 'red', 'orange', 'yellow']
-
-        this.createBricks()
-
+        this.camadas = this.colors.length
     }
-    createBricks(){
-        for (let y = 0; y < (this.game.height / 3) / this.height; y++){
+    createBricks(camadas=this.camadas){
+        for (let y = 0; y < camadas; y++){
             let row = []
             for (let x = 0; x < (this.game.width - 50) / this.width; x++){
                 row.push({width: this.width, height: this.height, x: x * this.width + 20, y: y * this.height + 20})
@@ -64,43 +62,62 @@ class Ball {
     }
     update(){
         this.x += this.speed.x;
-        this.checkBrickCollision('x');
-        this.checkPlayerCollision('x');
+        this.checkCollisions('x');
         this.y += this.speed.y;
-        this.checkBrickCollision('y');
-        this.checkPlayerCollision('y');
+        this.checkCollisions('y');
+    }
 
-        this.checkScreenCollision();
+    checkCollisions(dir){
+        this.checkScreenCollision(dir)
+        if (this.y > this.game.height / 2){
+            this.checkPlayerCollision(dir)            
+        } else {
+            this.checkBrickCollision(dir)
+        }        
     }
 
     checkPlayerCollision(dir){
-        if (this.x + this.width >= this.game.player.x && this.x <= this.game.player.x + this.game.player.width &&
-            this.y + this.height >= this.game.player.y && this.y <= this.game.player.y + this.game.player.height){
-            this.speed[dir] *= -1
-            this[dir] += this.speed[dir]
-            return
+        let player = this.game.player
+        if (this.x + this.width >= player.x + player.move && this.x <= player.x + player.width + player.move &&
+            this.y + this.height >= player.y && this.y <= player.y + player.height){
+                if (dir == "x"){
+                    this.speed[dir] *= -1
+                    this[dir] += this.speed[dir]
+                } else {
+                    this.speed.y *= -1
+                    this.speed.x = ((player.x + player.move + (player.width / 2)) - (this.x + (this.width / 2))) / 6
+                    console.log(this.speed.x)
+                }
+            
         }
     }
 
-    checkScreenCollision(){
-        if (this.y < 0){
-            this.speed.y *= -1
+    checkScreenCollision(dir){
+        if (dir == "x"){
+            if (this.x < 0){
+                this.speed.x *= -1
+                return
+            }
+            else if (this.x + this.width > this.game.width){
+                this.speed.x *= -1
+                return
+            }
         }
-        else if (this.y + this.height > this.game.height){
-            this.speed.y = 0
-            this.speed.x = 0            
-            this.moving = false
-            this.game.player.lives -= 1
-            console.log(this.game.player.lives)
-            if (this.game.player.lives > 0){
-                this.resetPos()
-            }            
-        }
-        else if (this.x < 0){
-            this.speed.x *= -1
-        }
-        else if (this.x + this.width > this.game.width){
-            this.speed.x *= -1
+        else if (dir == "y"){
+            if (this.y < 0){
+                this.speed.y *= -1
+                return
+            }
+            else if (this.y + this.height > this.game.height){
+                this.speed.y = 0
+                this.speed.x = 0            
+                this.moving = false
+                this.game.player.lives -= 1
+                if (this.game.player.lives > 0){
+                    this.resetPos()
+                }
+                return
+            }
         }
     }
 
@@ -130,6 +147,7 @@ class Player{
         this.color = '#d8e0e7'
 
         this.speed = 5
+        this.move = 0
         this.key = ''
 
         this.controls = {
@@ -145,43 +163,44 @@ class Player{
         ctx.fillRect(this.x, this.y, this.width, this.height)        
     }
     update(){
+        this.move = 0
         if (this.key in this.controls){
-            this.controls[this.key].call(this, this.speed)
+            this.controls[this.key].call(this)
             if (this.checkScreenCollision()){
-                this.controls[this.key].call(this, this.speed * -1)
+                this.move = 0
             }
         }
+        this.x += this.move
         this.checkWin()
     }
 
     checkWin(){
         if (this.game.bricks.bricks.length == 0){
-
-            this.game.bricks = new Bricks(this.game)
-            this.game.ball = new Ball(this.game)
+            this.game.bricks.createBricks()
         }
     }
 
     checkScreenCollision(){
-        if (this.x + this.width >= this.game.width){
+        if (this.x + this.move + this.width >= this.game.width){
             return true
-        } else if (this.x <= 0){
+        } else if (this.x + this.move <= 0){
             return true
         }
         return false
     }
 
-    moveLeft(speed){
-        this.x -= speed
+    moveLeft(){
+        this.move = -this.speed
     }
 
-    moveRight(speed){
-        this.x += speed
+    moveRight(){
+        this.move = this.speed
     }
     startBallMove(){
         if (!this.game.ball.moving && this.lives > 0){
             this.game.ball.speed.y = -4
             this.game.ball.speed.x = 4
+            this.game.ball.moving = true
         }
     }
 }
@@ -194,6 +213,8 @@ class Game{
         this.player = new Player(this)
         this.ball = new Ball(this)
         this.bricks = new Bricks(this)
+
+        this.bricks.createBricks()
 
         addEventListener('keydown', (evt) => {
             if (evt.key in this.player.controls){

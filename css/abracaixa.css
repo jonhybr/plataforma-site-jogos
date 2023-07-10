@@ -1,0 +1,102 @@
+.main-caixas-conteiner {
+    counter-reset: section;
+
+    #caixa {
+        width: 60%;
+        height: 95%;
+        border: 1px solid black;
+        background-color: lightskyblue;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        #fullscreen {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 3vw;
+            aspect-ratio: 1/1;
+        }
+
+        #perguntas-container {
+            width: 80%;
+            aspect-ratio: 4/2;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5%;
+            position: relative;
+            .pergunta-div {
+                flex: 1 1 20%;
+                aspect-ratio: 3/4;
+                background-color: rgb(85, 130, 255);
+                border: 4px solid #1f1f1f;
+                position: relative;
+                font-size: 1.5vmin;
+                padding-top: 5%;
+                .capa {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    background-color: rgb(85, 130, 255);
+                    border: 4px solid rgb(67, 104, 204);
+                    outline: 4px solid rgb(67, 104, 204);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 8vmin;
+                    color: white;
+                    text-shadow: 3px 3px black;
+                    &::after {
+                        counter-increment: section;
+                        content: counter(section);
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.clicado {
+    transform-origin: 0 0;
+    animation: pergunta-click 0.5s 1 forwards;
+    transform: scaleY(0.1);
+}
+
+.fechado:hover {
+    transform-origin: 0 0;
+    animation: pergunta-hover 0.5s 1 forwards;
+}
+
+.invisivel {    
+    animation: invisivel 1s 1 forwards;
+    visibility: hidden;
+}
+
+.zoom {    
+    animation: zoom 1.5s 1 forwards;
+}
+
+@keyframes invisivel {
+    0% {opacity: 100%;}
+    100% {opacity: 0%;}
+}
+
+@keyframes pergunta-hover {
+    0% {transform: scaleY(1);}
+    100% {transform: scaleY(0.9);}
+}
+
+@keyframes pergunta-click {
+    0% {transform: scaleY(0.9);}
+    100% {transform: scaleY(0.1);}
+}
+
+@keyframes zoom {
+    0% {}
+    50% { transform: scale(1);}
+    100% {transform: scale(1);}
+}
