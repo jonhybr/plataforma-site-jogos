@@ -1,6 +1,4 @@
 #main2048{
-    height: calc(100% - var(--header-height) - var(--footer-height));
-    padding: 1%;
     #topo {
         display: flex;
         gap: 5px;
