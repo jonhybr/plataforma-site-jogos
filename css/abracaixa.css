@@ -2,8 +2,9 @@
     counter-reset: section;
 
     #caixa {
+        user-select: none;
         width: 60%;
-        height: 95%;
+        aspect-ratio: 16/9;
         border: 1px solid black;
         background-color: lightskyblue;
         position: relative;
@@ -11,11 +12,21 @@
         justify-content: center;
         align-items: center;
 
-        #fullscreen, #exit-fullscreen {
+        #fullscreen,
+        #exit-fullscreen {
             position: absolute;
             right: 0;
             bottom: 0;
-            width: 3vw;
+            width: 5%;
+            aspect-ratio: 1/1;
+            -webkit-user-drag: none;
+        }
+        
+        #lem-icon {
+            -webkit-user-drag: none;
+            position: absolute;            
+            top: -3%;
+            width: 8%;
             aspect-ratio: 1/1;
         }
 
@@ -23,9 +34,10 @@
             position: absolute;
             top: 10px;
             left: 10px;
-            width: 3vw;
+            width: 5%;
             aspect-ratio: 1/1;
             transform: rotate(-80deg);
+            -webkit-user-drag: none;
         }
 
         .hidden {
@@ -36,47 +48,139 @@
             display: none;
             width: 80%;
             height: 80%;
-            grid-template: 
-            "p p p . a a . b b" 45%
-            "p p p . . . . . ." 10%
-            "p p p . c c . d d" 45%;
+            grid-template:
+                "p p p p . a a . b b"
+                "p p p p . . . . . ."
+                "p p p p . c c . d d";
+
+            grid-template-columns: 10% 10% 10% 15% 5% 10% 15% 5% 15% 10%;
+            grid-template-rows: 46% 8% 46%;
+
             #pergunta {
                 grid-area: p;
-                background-color: red;
+                background-color: rgb(85, 130, 255);
+                border: 4px solid #1f1f1f;
+                position: relative;
+                padding: 15% 5%;
+                color: white;
+                font-size: 2.1vmin;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: -4px;
+                    left: -4px;
+                    background-color: rgb(85, 130, 255);
+                    border: 4px solid rgb(67, 104, 204);
+                    transform: scaleY(0.1);
+                    transform-origin: 0 0;
+                }
             }
+
             .respostas {
-                background-color: green;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(85, 130, 255);
+                border: 5px solid #1f1f1f;
+                position: relative;
+                width: 100%;
+                padding: 0% 2%;
+                color: white;
+                font-size: 2.5vmin;
+
+                &::after {
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    text-align: center;
+                    color: white;
+                    font-size: 5vmin;
+                }
+
+                &:hover {
+                    border: 5px solid #9b9b9b;
+                    cursor: pointer;
+                }
             }
+
+            .certo {
+                &::before {
+                    content: url("../imagens/icones/certo.png");                    
+                    animation: certo 1s forwards;
+                    position: absolute;
+                    aspect-ratio: 1/1;
+                    text-align: center;
+                }
+            }
+
+            .errado {
+                &::before {
+                    content: url("../imagens/icones/errado.png");                    
+                    animation: certo 2s forwards;
+                    position: absolute;
+                    aspect-ratio: 1/1;
+                    text-align: center;
+                }
+            }
+
             .a {
                 grid-area: a;
+
+                &::after {
+                    content: "A";
+                }
             }
+
             .b {
                 grid-area: b;
+
+                &::after {
+                    content: "B";
+                }
             }
+
             .c {
                 grid-area: c;
+
+                &::after {
+                    content: "C";
+                }
             }
+
             .d {
                 grid-area: d;
+
+                &::after {
+                    content: "D";
+                }
             }
-            
+
         }
 
         #perguntas-container {
             width: 80%;
             aspect-ratio: 4/2;
             display: flex;
+            align-items: center;
+            justify-content: center;
             flex-wrap: wrap;
             gap: 5%;
             position: relative;
+            z-index: 2;
+
             .pergunta-div {
-                flex: 1 1 20%;
+                flex: 1 0 20%;
                 aspect-ratio: 3/4;
                 background-color: rgb(85, 130, 255);
                 border: 4px solid #1f1f1f;
                 position: relative;
-                font-size: 1.5vmin;
-                padding-top: 5%;
+                font-size: 1vmin;
+                color: white;
+                padding: 3% 1% 0% 1% ;
+
                 .capa {
                     position: absolute;
                     width: 100%;
@@ -92,10 +196,33 @@
                     font-size: 8vmin;
                     color: white;
                     text-shadow: 3px 3px black;
+
                     &::after {
                         counter-increment: section;
                         content: counter(section);
                     }
+                }
+                .certo {
+                    display: flex;
+                    align-items: center;
+                    &::after{
+                        content: "";
+                        background: url('../imagens/icones/certo.png') no-repeat;
+                        background-size: 100%;
+                        width: 100%;
+                        height: 95%;
+                    }                   
+                }
+                .errado {
+                    display: flex;
+                    align-items: center;
+                    &::after{
+                        content: "";
+                        background: url('../imagens/icones/errado.png') no-repeat;
+                        background-size: 100%;
+                        width: 100%;
+                        height: 82%;
+                    }  
                 }
 
             }
@@ -105,41 +232,76 @@
 
 .clicado {
     transform-origin: 0 0;
-    animation: pergunta-click 0.5s 1 forwards;
+    animation: pergunta-click 1.5s 1 forwards;
     transform: scaleY(0.1);
 }
 
 .fechado:hover {
     transform-origin: 0 0;
+    cursor: pointer;
     animation: pergunta-hover 0.5s 1 forwards;
 }
 
-.invisivel {    
+.invisivel {
     animation: invisivel 1s 1 forwards;
-    visibility: hidden;
 }
 
-.zoom {    
-    animation: zoom 1.5s 1 forwards;
+.zoom {
+    animation: zoom 2s 1 forwards;
+}
+
+
+@keyframes certo {
+    0% {transform: scale(0.1);}
+    100% {transform: scale(1);}
+}
+
+@keyframes errado {
+    0% {transform: scale(0.1);}
+    100% {transform: scale(1);}
 }
 
 @keyframes invisivel {
-    0% {opacity: 100%;}
-    100% {opacity: 0%;}
+    0% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+    }
 }
 
 @keyframes pergunta-hover {
-    0% {transform: scaleY(1);}
-    100% {transform: scaleY(0.9);}
+    0% {
+        transform: scaleY(1);
+    }
+
+    100% {
+        transform: scaleY(0.9);
+    }
 }
 
 @keyframes pergunta-click {
-    0% {transform: scaleY(0.9);}
-    100% {transform: scaleY(0.1);}
+    0% {
+        transform: scaleY(0.9);
+    }
+
+    60% {
+        transform: scaleY(0.1);
+    }
+    100% {
+
+    }
 }
 
 @keyframes zoom {
     0% {}
-    50% { transform: scale(1);}
-    100% {transform: scale(1);}
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }

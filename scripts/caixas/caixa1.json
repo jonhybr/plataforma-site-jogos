@@ -1,0 +1,42 @@
+{
+    "1": {
+        "pergunta": "Um jogador, ao final de um jogo, marcou 32 arremessos e acumulou 83 pontos. Considerando que cada arremesso certo vale 4 pontos e cada errado perde meio ponto, quantos arremessos certos fez este jogador?",
+        "respostas": ["25", "22", "15", "12"],
+        "resposta": "22"
+    },
+    "2": {
+        "pergunta": "Em um bar com mesas de 4 cadeiras, se juntarmos duas mesas teremos seis cadeiras, e se forem três mesas teremos 8 cadeiras. Dando sequência à junção das mesas, quantas cadeiras teremos ao juntarmos 12 mesas?",
+        "respostas": ["22", "24", "26", "28"],
+        "resposta": "26"
+    },
+    "3": {
+        "pergunta": "Um pai tem 32 anos e seu filho tem 6 anos. Daqui a quantos anos, a idade do pai será o triplo da idade do filho?",
+        "respostas": ["4", "5", "6", "7"],
+        "resposta": "7"
+    },
+    "4": {
+        "pergunta": "Numa escola há 220 estudantes no turno da manhã e 180 no turno da tarde. Para realizar uma gincana, os estudantes serão organizados em grupos, todos com o mesmo número de estudantes e sem que se misturem os estudantes de turnos diferentes. Qual é o número máximo de alunos que pode haver em cada grupo e, nesse caso, quantos grupos serão formados em cada turno, respectivamente?",
+        "respostas": ["20 – 11 – 9", "20 – 20 –20", "10 – 20 – 20", "10 – 22 – 18"],
+        "resposta": "20 – 11 – 9"
+    },
+    "5": {
+        "pergunta": "Uma pessoa tem um cofre e junta no mínimo 5 moedas por dia de 10 ou de 5 centavos. Sabendo que essa pessoa junta no máximo 3 moedas do mesmo valor por dia, qual o maior e o menor valor, em reais, que pode ser economizado, respectivamente, após 10 dias?",
+        "respostas": ["3,50 ; 2,00", "3,50 ; 3,00", "4,00 ; 2,00", "4,00 ; 3,50"],
+        "resposta": "4,00 ; 3,50"
+    },
+    "6": {
+        "pergunta": "Durante a pandemia, o monitoramento dos casos de COVID-19 foi essencial, principalmente para o gerenciamento dos estoques de remédios. Em certa cidade, o número de casos graves e não graves com a necessidade de uso de certo medicamento foi de 110 casos. Nos casos graves, foram ministradas 5 doses deste medicamento e nos casos não graves, apenas duas doses. O total de doses aplicadas foi de 439. A quantidade de casos graves e não graves, respectivamente, dessa cidade, é ",
+        "respostas": ["40 e 70", "70 e 40", "73 e 37", "80 e 30"],
+        "resposta": "73 e 37"
+    },
+    "7": {
+        "pergunta": "Eu tenho 27 adesivos a mais que meu amigo, e meu amigo tem o triplo do meu primo. Se eu tenho 138 adesivos, quantos adesivos juntos temos eu, meu amigo e meu primo?",
+        "respostas": ["111", "138", "165", "286"],
+        "resposta": "286"
+    },
+    "8": {
+        "pergunta": "Durante o lanche, estive prestando atenção: para cada 3 pastéis que minha amiga comeu, tratei de comer 4. Minha amiga comeu, sozinha, 15 pastéis. Quantos pastéis comeram as duas pessoas?",
+        "respostas": ["20", "22", "30", "35"],
+        "resposta": "35"
+    }
+}
