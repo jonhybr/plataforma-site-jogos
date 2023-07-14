@@ -1,8 +1,8 @@
 .main-caixas-conteiner {
     counter-reset: section;
-
-    #caixa {
-        user-select: none;
+ixa {
+       
+    #ca user-select: none;
         width: 60%;
         aspect-ratio: 16/9;
         border: 1px solid black;

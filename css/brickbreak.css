@@ -1,9 +1,23 @@
 #topo {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: flex;        
     padding: 10px;
-    width: 600px;
+    width: 610px;
     background-color: black;
     color: white;
+    > * {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+    #vidas {
+        margin-top: 2%;
+        display: flex;
+        text-align: right;
+        justify-content: center;
+        gap: 2%;
+        > .vida {
+            width: 20%; 
+            background-color: white;
+            aspect-ratio: 4/1;
+         }
+    }
 }
