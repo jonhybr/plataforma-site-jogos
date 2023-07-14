@@ -295,27 +295,33 @@
                         content: counter(section);
                     }
                 }
-                .certo {
+
+                .certo, .errado {
                     display: flex;
                     align-items: center;
-                    &::after{
+                    &::before{
                         content: "";
-                        background: url('../imagens/icones/certo.png') no-repeat;
-                        background-size: 100%;
+                        position: absolute;
                         width: 100%;
-                        height: 95%;
+                        height: 100%;
+                        z-index: 4;
+                    } 
+                }
+                .certo {
+                    &::before{
+                        content: "";
+                        background: url('../imagens/icones/certo.png') no-repeat;                        
+                        background-size: 100%;
+                        background-position: center;
                     }                   
                 }
                 .errado {
-                    display: flex;
-                    align-items: center;
-                    &::after{
-                        content: "";
-                        background: url('../imagens/icones/errado.png') no-repeat;
+                    &::before {
+                        content: "";                    
+                        background: url('../imagens/icones/errado.png') no-repeat;                        
                         background-size: 100%;
-                        width: 100%;
-                        height: 82%;
-                    }  
+                        background-position: center;
+                    }                    
                 }
 
             }
