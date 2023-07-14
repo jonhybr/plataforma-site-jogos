@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <link href="../css/main.css" rel="stylesheet">
+    <%- include('head.html')%>
     <script src="../scripts/pesquisarJogo.js" defer></script>
-    <title>Jogos LEM</title>
 </head>
 <body>
     
@@ -20,6 +18,16 @@
             <input type="text" id="pesquisaInput">
         </div>
         <div id="jogos">
+            <div class="jogo">
+                <figure>
+                    <a href="/abracaixa"><img src="../imagens/capas/caixas/provas_ifrs.PNG"></a>
+                </figure>                
+                <div>
+                    <a href="/abracaixa"><h3>Caixas</h3></a>
+                    <p>Tente acertar as perguntas de cada categoria</p>
+                    <h5>Feito por: João & Diana</h5>
+                </div>
+            </div>
             <div class="jogo">
                 <figure>
                     <a href="/quiz"><img src="../imagens/capas/quiz.PNG"></a>
@@ -233,17 +241,7 @@
                     <p>Escolha o seu padrão de genius com cada vez mais peças</p>
                     <h5>Feito por: João & Diego</h5>
                 </div>
-            </div>
-            <div class="jogo">
-                <figure>
-                    <a href="/abracaixa"><img></a>
-                </figure>                
-                <div>
-                    <a href="/abracaixa"><h3>Caixas</h3></a>
-                    <p></p>
-                    <h5></h5>
-                </div>
-            </div>
+            </div>            
         </div>
     </main>
 

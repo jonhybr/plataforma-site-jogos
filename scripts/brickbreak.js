@@ -142,6 +142,8 @@ class Player{
         this.width = 100
         this.height = 20
         this.lives = 3
+        this.controls_delay = 20
+        this.controls_timer = 0
         this.x = (this.game.width / 2) - (this.width / 2);
         this.y = this.game.height - this.height - 20
         this.color = '#d8e0e7'
@@ -153,7 +155,8 @@ class Player{
         this.controls = {
             'ArrowRight': this.moveRight,
             'ArrowLeft': this.moveLeft,
-            'ArrowUp': this.startBallMove
+            'ArrowUp': this.startBallMove,
+            'f': this.fullscreen,
         }
     }
 
@@ -163,6 +166,9 @@ class Player{
         ctx.fillRect(this.x, this.y, this.width, this.height)        
     }
     update(){
+        if (this.controls_timer < this.controls_delay){
+            this.controls_timer++
+        }
         this.move = 0
         if (this.key in this.controls){
             this.controls[this.key].call(this)
@@ -202,6 +208,16 @@ class Player{
             this.game.ball.speed.x = 4
             this.game.ball.moving = true
         }
+    }
+    fullscreen(){
+        if (this.controls_timer == this.controls_delay){
+            if (!canvas.matches(':fullscreen')){
+                canvas.requestFullscreen();
+            } else {
+                document.exitFullscreen()
+            }
+            this.controls_timer = 0
+        }        
     }
 }
 

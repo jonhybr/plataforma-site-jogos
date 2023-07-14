@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
+    <%- include('head.html')%>
     <link href="../css/jogo2048.css" rel="stylesheet">
-    <script src="../scripts/jogo2048.js" defer></script>
-    <title>Jogos LEM</title>
+    <script src="../scripts/jogo2048.js" defer></script>    
 </head>
 <body>
     
@@ -13,7 +12,7 @@
     <main id="main2048">
         <h2>2048</h2>
 
-        <p>Mova os blocos e tente atingir o valor 2048 em algum deles</p>
+        <p>Mova os blocos e tente atingir o valor 2048 em algum deles.<br>CONTROLES: SETAS DO TECLADO</p>
 
         <div id="topo">Movimentos: <div id="moves">0</div>Pontuação: <div id="pontos">4</div></div>
 
