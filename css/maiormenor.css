@@ -1,3 +1,48 @@
+#maiormenor-container {
+    width: 68%;
+    height: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;    
+    .mm-div {   
+        aspect-ratio: 4/3;
+        width: 32%;
+        > figure {
+            height: 70%;
+            > a, img {
+                height: 100%;
+                width: 100%;
+            }            
+        }
+        > section {
+            padding-top: 1%;
+            padding-left: 1%;            
+            > a {
+                text-decoration: none;
+                > h3 {
+                    color: rgb(0, 101, 141);
+                }
+            }            
+        }
+        &:hover {
+            & h3 {
+                color: rgb(0, 149, 207);
+            }            
+        }
+    }
+}
+
+main {
+    > h3 {
+        margin: 1%;
+        text-decoration: underline;
+        font-size: 3vmin;
+        color: rgb(255, 226, 61);
+        text-shadow: #131313 1px 1px;
+    }
+}
+
 #maiormenorDiv {
     overflow: hidden;
     width: 50%;
