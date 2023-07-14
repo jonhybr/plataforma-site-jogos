@@ -53,6 +53,7 @@
 
 .main-caixas-conteiner {
     counter-reset: section;
+<<<<<<< HEAD
     position: relative;
     #voltar-pagina {
         position: absolute;
@@ -79,6 +80,11 @@
     }
     #caixa {
         user-select: none;
+=======
+ixa {
+       
+    #ca user-select: none;
+>>>>>>> 2148799b1666cc61f4607bf22ca90b37a33224c4
         width: 60%;
         aspect-ratio: 16/9;
         border: 1px solid black;

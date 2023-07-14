@@ -107,18 +107,6 @@ addEventListener('mousemove', () => {
 
 
 function checkWin(){
-    let empate = 0
-    for (const div of grid){
-        if (div.innerText != ""){
-            empate++
-            if (empate == grid.length){
-                for (const div of grid){
-                    div.innerText = ""
-                    div.className = "espaco"
-                }
-            }
-        }
-    }
     for (let y = 0; y < 3; y++){
         let ch = 0
         let cv = 0
@@ -157,6 +145,18 @@ function checkWin(){
             if (grid[2].innerText != ""){
                 if (grid[2].innerText == grid[4].innerText && grid[4].innerText == grid[6].innerText){
                     resetGame()
+                }
+            }
+        }
+    }
+    let empate = 0    
+    for (const div of grid){
+        if (div.innerText != ""){
+            empate++
+            if (empate == grid.length){
+                for (const div of grid){
+                    div.innerText = ""
+                    div.className = "espaco"
                 }
             }
         }

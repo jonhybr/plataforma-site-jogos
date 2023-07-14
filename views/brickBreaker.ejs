@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <%- include('head.html')%>
     <script src="../scripts/brickbreak.js" defer></script>    
     <link href="../css/brickbreak.css" rel="stylesheet">    
 </head>
+
 <body>
-    
+
     <%- include('header.html') %>
 
-    <main>
+        <main>
 
-        <h2>Brick Breaker</h2>
-        <p>Mova a plataforma sem deixar a esfera cair (Seta para cima para começar!)</p>
-        <div id="topo">
-            <div>Pontuação <div id="pontos"></div></div>
-            <div>Vidas <div id="vidas"></div></div>
-        </div>
-        <canvas id="brickBreakCanvas"></canvas>
+            <h2>Brick Breaker</h2>
+            <p>Mova a plataforma sem deixar a esfera cair (Seta para cima para começar!)</p>
+            <div id="topo">
+                <div>
+                    <div>NÍVEL</div>
+                    <div id="nivel">1</div>
+                </div>
+                <div>
+                    <div>PONTUAÇÃO</div>
+                    <div id="pontos">00000000</div>
+                </div>                
+                <div>VIDAS <div id="vidas">
+                        <div class="vida"></div>
+                        <div class="vida"></div>
+                        <div class="vida"></div>
+                    </div>
+                </div>
+            </div>
+            <canvas id="brickBreakCanvas"></canvas>
 
-    </main>
+        </main>
 
-    <%- include('footer.html') %>
+        <%- include('footer.html') %>
 
 </body>
+
 </html>

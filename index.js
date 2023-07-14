@@ -38,3 +38,11 @@ for (const page of caixasPages){
         res.render("caixas/" + page)
     })
 }
+
+const maioresmenores = ["mm1", "mm2", "mm3"]
+
+for (const page of maioresmenores){
+    app.get("/" + page, (req, res) => {
+        res.render("maioresmenores/" + page)
+    })
+}
